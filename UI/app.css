@@ -1,0 +1,82 @@
+.background
+{ background-color: transparent;
+  background-image: url("images/background.jpg");
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card {  background-color: #fff0;}
+
+.card-wrapper {
+    margin: 5% 0;
+    background-color: #fff0;
+  }
+  
+/* You can adjust the image size by increasing/decreasing the width, height */
+.custom-circle-image {
+  width: 10vw; /* note i used vw not px for better responsive */
+  height: 10vw;
+}
+
+.custom-circle-image img {
+  object-fit: cover;
+  background-color:transparent
+}
+
+.card-title {
+
+  background-color:#1d2124a6;
+  color:white;
+  display:inline-block;
+
+}
+
+.card-text {
+  font-family: MerriweatherRegular;
+  font-size: 1px;
+  line-height: initial;
+  display: inline-block;
+}
+
+.dropzone {
+  border-style: dashed;
+  background: #00000070;
+  color: #ffffff;
+  font-weight:bold;
+}
+
+.btn{color: white;}
+.error {
+
+  font-size: 20px;
+
+ 
+}
+
+
+#classTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color:white;
+}
+
+#classTable td, #classTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background: #00000070;
+  color:white;
+}
+
+#classTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  font-weight:400;
+
+}
+div {
+  opacity: 1;
+
+
+}

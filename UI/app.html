@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Person Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="background">
+
+    
+    <nav class="navbar navbar-dark bg-dark ">
+
+        <div class="column " ><a class="navbar-brand" style="font-weight: 650" href="#">Fab Five Classifier</a></div>
+      
+      </div>
+      
+      <div id="header">
+              <span class="right_header"><a href="https://github.com/ibadurrehman1" class="btn btn-default">Github <i class="fa fa-github"></i></a>
+              <a> </a>
+              <a href="https://www.linkedin.com/in/ibad-ur-rehman-/" class="btn btn-default">LinkedIn <i class="fa fa-linkedin"></i></a>
+          </a></span>
+          </div>
+          </nav>
+      
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col card-wrapper"  data-player="babarazam">
+                <div class="card border-0" >
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/babar_azam_profile.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Babar Azam</h4>
+
+                    </div>
+                </div>
+            </div>      
+
+            <div class="col card-wrapper" data-player="viratkohli">
+                <div class="card border-0" >
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="..\Data_collection\virat.kohli\profile.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Virat Kohli</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col card-wrapper" data-player="steve_smith49">
+                <div class="card border-0" >
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/steve.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Steve Smith</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col card-wrapper" data-player="root66">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="../Data_collection/root66/2017-06-28_15-23-40_UTC.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Joe Root</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col card-wrapper"  data-player="kane_s_w">
+                <div class="card  border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="../Data_collection/kane_s_w/Eng v NZ_ 3rd Test - Kane Williamson.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Williamson</h4>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/upload.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick">Drop files here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3 mx-auto">
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4 error" id="error" >
+                <p style=" color: white;
+                text-align: center;
+                background: #0a090970;">Sorry Model is not able to Detect Face. Kindly Upload image having atleast two eyes visible.</p>
+            </div>
+
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+            <div class="col-sm-4" id="divClassTable">
+                <table id="classTable">
+                        <tr>
+                            <th>Player</th>
+                            <th>Probability Score</th>
+                        </tr>
+
+                        <tr>
+                            <td>Babar Azam</td>
+                            <td id="score_babarazam"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Steve Smith</td>
+                            <td id="score_steve_smith49"></td>
+                        </tr>
+                       <tr>
+                            <td>Joe Root</td>
+                            <td id="score_root66"></td>
+                        </tr>
+                    <tr>
+                            <td>Virat Kohli</td>
+                            <td id="score_viratkohli"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Kane Williamson</td>
+                            <td id="score_kane_s_w"></td>
+                        </tr>
+
+
+                </table>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+
+</html>
